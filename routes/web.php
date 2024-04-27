@@ -6,6 +6,8 @@ use App\Http\Controllers\clientescontroller;
 use App\Http\Controllers\vehiculoscontroller;
 use App\Http\Controllers\ventascontroller;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,7 @@ use App\Http\Controllers\ventascontroller;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -38,12 +41,14 @@ Route ::put('/vehiculos/{vehiculo}',[vehiculoscontroller::class,'update'])->name
 Route ::get('/vehiculos/{vehiculo}/edit',[vehiculoscontroller::class,'edit'])->name('vehiculos.edit');
 
 
+
 Route ::get('/clientes',[clientescontroller::class,'index'])->name('clientes.index');
 Route ::post('/clientes',[clientescontroller::class,'store'])->name('clientes.store');
 Route ::get('/clientes/create',[clientescontroller::class,'create'])->name('clientes.create');
 Route ::delete('/clientes/{cliente}',[clientescontroller::class,'destroy'])->name('clientes.destroy');
 Route ::put('/clientes/{cliente}',[clientescontroller::class,'update'])->name('clientes.update');
 Route ::get('/clientes/{cliente}/edit',[clientescontroller::class,'edit'])->name('clientes.edit');
+
 
 
 Route ::get('/ventas',[ventascontroller::class,'index'])->name('ventas.index');
@@ -56,3 +61,4 @@ Route ::get('/ventas/{venta}/edit',[ventascontroller::class,'edit'])->name('vent
 });
 
 require __DIR__.'/auth.php';
+
